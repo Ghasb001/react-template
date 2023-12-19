@@ -3,27 +3,31 @@ import React, { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route } from "react-router-dom";
 // jsx components go here
-import Component from 'components.jsx';
+import Component from './components/component.jsx';
 
 
 const App = () => {
   // hooks go here
-  const [mode, setMode] = useState(localStorage.getItem('pots-theme'));
 
-  return (
-    <Suspense >
-        <div>
-            <Routes>
-              <Route path="/" element={<Main pic={pic} />} />
-              <Route path="/aboutPage" element={<About />} />
-              <Route path="/kidVideosPage" element={<KidVideos />} />
-              <Route path="/resourcePage" element={<Resources />} />
-              <Route path="/tipsPage" element={<TipsTricks />} />
-              <Route path="/caregiverPage" element={<CaregiverVideos />} />
-            </Routes>
-        </div>
-    </Suspense>
-  )
+//styling and functions
+
+// add in suspense when you need some code splitting. Also add in the route component when
+// you need to add more routes
+// return (
+//   <Suspense >
+//       <div>
+//           <Routes>
+//             <Route path="/" element={<RouteComp pic={pic} />} />
+//           </Routes>
+//       </div>
+//   </Suspense>
+// )
+return (
+  <div>
+    Hi! I'm the main Page in App.jsx!
+    <Component />
+  </div>
+)
 }
 
 export default App;
